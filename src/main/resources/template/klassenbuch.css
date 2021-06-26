@@ -1,0 +1,48 @@
+* {
+    font-family: Verdana, sans-serif;
+}
+
+page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+
+page[size="A4"] {  
+    width: 21cm;
+    height: 29.7cm; 
+}
+
+@media print {
+    body, page {
+        margin: 0;
+        box-shadow: 0;
+    }
+}
+
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    border: 2px solid black;
+}
+
+.sideways_text {
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    font-size: 8pt;
+}
+.vertical_text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-weight: bold;
+    font-size: 10pt;
+    padding: 5pt;
+}
+
+
+

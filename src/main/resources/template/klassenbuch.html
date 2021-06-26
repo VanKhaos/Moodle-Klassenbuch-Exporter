@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" href="style.css"/>
+</head>
+
+<body>
+<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
+    <table>
+        <tr>
+            <td class = "header-td">Klassenbuch	Woche vom <span class="entries" th:text="${STARTDATE}"></span> bis <span class="entries"></span></td>
+            <td class="right"><img class="logo" src="bfz-logo.jpg" alt="logo"></td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <table>
+        <tr>
+            <th style="font-size: 11pt; text-align:center;">Tag</th>
+            <th><span class="sideways_text">Unter-<br>richtsblock</span></th>
+            <th style="font-size: 11pt; text-align:center; padding-left: 2mm; padding-right: 2mm;">Themen-<br>block</th>
+            <th style="font-size: 14pt; text-align:center; padding-left: 4cm; padding-right: 4cm;">Inhalt</th>
+            <th style="font-size: 10pt; text-align:center; font-weight: normal; padding-left: 2mm; padding-right: 2mm;">durch-<br>geführt<br>von</th>
+            <th style="font-size:  8pt; text-align:center; font-weight: normal; padding-left: 2mm; padding-right: 2mm;">im Sonderfall<br>abweichende<br>Schulungszeit<br>mit Uhrzeit<br>und Begründung</th>
+        </tr>
+    </table>
+
+</div>
+
+
+<table class="table1">
+    <tr>
+        <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
+            <span th:text="${WEEKDAY_2}"></span><br>
+            <span th:text="${STARTDATE_2}"></span>
+        </td>
+        <td><span class="vertical_text">1 2</span></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+    </tr>
+    <tr>
+
+        <td><span class="vertical_text">3 4</span></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+    </tr>
+    <tr>
+
+        <td><span class="vertical_text">5 6</span></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+    </tr>
+    <tr>
+
+        <td><span class="vertical_text">7 8</span></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+    </tr>
+    <tr>
+        <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
+            <span th:text="${WEEKDAY_2}"></span><br>
+            <span th:text="${STARTDATE_2}"></span>
+        </td>
+        <td><span class="vertical_text">1 2</span></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+    </tr>
+    <tr>
+
+        <td><span class="vertical_text">3 4</span></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+    </tr>
+    <tr>
+
+        <td><span class="vertical_text">5 6</span></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+    </tr>
+    <tr>
+
+        <td><span class="vertical_text">7 8</span></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+    </tr>
+    <tr>
+        <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
+            <span th:text="${WEEKDAY_3}"></span><br>
+            <span th:text="${STARTDATE_3}"></span>
+        </td>
+        <td><span class="vertical_text">1 2</span></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+    </tr>
+    <tr>
+
+        <td><span class="vertical_text">3 4</span></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+    </tr>
+    <tr>
+
+        <td><span class="vertical_text">5 6</span></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+    </tr>
+    <tr>
+
+        <td><span class="vertical_text">7 8</span></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+        <td class="entries"></td>
+    </tr>
+        <tr>
+            <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
+                <span th:text="${WEEKDAY_4}"></span><br>
+                <span th:text="${STARTDATE_4}"></span>
+            </td>
+            <td style = "width: 1.5cm;"><span class="vertical_text">1 2</span></td>
+            <td class="entries"></td>
+            <td class="entries" style = "width: 8cm;"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+        </tr>
+        <tr>
+
+            <td><span class="vertical_text">3 4</span></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+        </tr>
+        <tr>
+
+            <td><span class="vertical_text">5 6</span></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+        </tr>
+        <tr>
+
+            <td><span class="vertical_text">7 8</span></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+        </tr>
+        <tr>
+            <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
+                <span th:text="${WEEKDAY_5}"></span><br>
+                <span th:text="${STARTDATE_5}"></span>
+            </td>
+            <td><span class="vertical_text">1 2</span></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+        </tr>
+        <tr>
+
+            <td><span class="vertical_text">3 4</span></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+        </tr>
+        <tr>
+
+            <td><span class="vertical_text">5 6</span></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+        </tr>
+        <tr>
+
+            <td><span class="vertical_text">7 8</span></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+            <td class="entries"></td>
+        </tr>
+    </table>
+
+    <p style = "font-size: 12pt; font-weight: bold; margin-top: 7mm;">Bemerkungen:</p>
+    <p><br><br><br><br></p>
+
+</body>
+
+</html>
