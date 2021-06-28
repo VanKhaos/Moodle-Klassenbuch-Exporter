@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
-
     <style>
         body {
     font-family: Verdana, sans-serif;
@@ -23,15 +21,6 @@
         vertical-align: bottom;
         padding-bottom: 10px;
     }
-
-
-
-    margin-top: 3.3cm;
-    margin-left: 2cm;
-
-    margin-bottom: 3.3cm;
-
-    size: A4 portrait;
 }
 
 div.header {
@@ -86,8 +75,23 @@ p {
 }
 
 table {
-    width: 100%;
     border-collapse: collapse;
+  table-layout: fixed;
+}
+
+table.fixed { table-layout:fixed; }
+table.fixed td { overflow: hidden; }
+
+th {
+    border: 2px solid black;
+}
+
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  width: auto;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 hr {
@@ -104,19 +108,6 @@ hr {
     page-break-before: always;
 }
 
-.sideways_text {
-    writing-mode: vertical-rl;
-    text-orientation: sideways;
-    font-size: 8pt;
-}
-
-.vertical_text {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-weight: bold;
-    font-size: 10pt;
-    padding: 5pt;
-}
 
 .entries {
     font-size: 10pt;
@@ -124,367 +115,287 @@ hr {
     color: darkslategray;
 }
 
-th {
-    border: 2px solid black;
-}
 
-td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
 
 .header-td {
     border: none;
 }
 
-.table1 {
-    width: 100%;
-    position: static;
-    margin-left: 0px;
-}
-
-.table2 {
-
-}
     </style>
 </head>
-
 <body>
 <div>
     <table>
+        <tbody>
         <tr>
-            <td class = "header-td">Klassenbuch	Woche vom <span class="entries"></span> bis <span class="entries"></span></td>
+            <td class="header-td">Klassenbuch Woche vom <span class="entries">25.06.2021</span>
+                bis <span class="entries">29.06.2021</span></td>
             <td class="right"><img class="logo" src="bfz-logo.jpg" alt="logo"></td>
         </tr>
+        </tbody>
     </table>
-
     <hr>
-
     <table>
+        <tbody>
         <tr>
-            <th style="font-size: 11pt; text-align:center;">Tag</th>
-            <th><span class="sideways_text">Unter-<br>richtsblock</span></th>
-            <th style="font-size: 11pt; text-align:center; padding-left: 2mm; padding-right: 2mm;">Themen-<br>block</th>
-            <th style="font-size: 14pt; text-align:center; padding-left: 4cm; padding-right: 4cm;">Inhalt</th>
-            <th style="font-size: 10pt; text-align:center; font-weight: normal; padding-left: 2mm; padding-right: 2mm;">durch-<br>geführt<br>von</th>
-            <th style="font-size:  8pt; text-align:center; font-weight: normal; padding-left: 2mm; padding-right: 2mm;">im Sonderfall<br>abweichende<br>Schulungszeit<br>mit Uhrzeit<br>und Begründung</th>
+            <th style="font-size: 11pt;text-align:center;width: 190px;">Tag</th>
+            <th style="font-size: 11pt;text-align:center;padding-left: 2mm;padding-right: 2mm;width: 250px;">Themen-<br>
+                block</th>
+            <th style="font-size: 14pt;text-align:center;padding-left: 4cm;padding-right: 4cm;width: 900px;">Inhalt</th>
+            <th style="font-size: 10pt; text-align:center; font-weight: normal; padding-left: 2mm; padding-right: 2mm;">durch-<br>
+                geführt<br>
+                von</th>
         </tr>
+        </tbody>
     </table>
-
 </div>
-
-
-<table class="table1">
+<table>
+    <tbody>
+    <!-- DAY 1 -->
     <tr>
-        <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
+        <td rowspan="4" style="font-size: 10pt;font-weight: bold;text-align: center;width: 191px;">
             <span>Mo</span><br>
-            <span>18.06.2021</span>
+            <span>25.06.2021</span> </td>
+        <td class="entries" style="
+    width: 254px;"> <span>Eine neue Woche</span><br>
         </td>
-        <td>
-            <span class="vertical_text">12</span>
+        <td class="entries" style="
+    width: 905px;"> <span>Schlafen</span><br>
+            <span>Schlafen</span><br>
         </td>
-        <td class="entries">
-            <span>Megafach</span></td>
-        <td class="entries">
-            <span>- ein Tolles Thema</span><br>
-            <span>- wirklich tolles Thema</span><br>
+        <td class="entries"> <span>WochenendKiller</span> <br>
         </td>
-        <td class="entries">
-            <span>Einer</span>
-        </td>
-        <td class="entries"></td>
     </tr>
     <tr>
-
-        <td><span class="vertical_text">34</span></td>
-        <td class="entries">
-            <span>Megafach</span></td>
-        <td class="entries">
-            <span>- mehr Thema zum Thema</span><br>
-            <span>- Worms 3 </span><br>
+        <td class="entries"> <span>Eine neue Woche</span><br>
         </td>
-        <td class="entries">
-            <span>Einer</span>
+        <td class="entries"> <span>Frühstücken</span><br>
+            <span>Frühstücken</span><br>
         </td>
-        <td class="entries"></td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
     </tr>
     <tr>
-
-        <td><span class="vertical_text">56</span></td>
-        <td class="entries">
-            <span>Megafach</span></td>
-        <td class="entries">
-            <span>- Duke Nuken Forever</span><br>
-            <span>- Destiny</span><br>
+        <td class="entries"> <span>Eine neue Woche</span><br>
         </td>
-        <td class="entries">
-            <span>Einer</span>
+        <td class="entries"> <span>Arbeiten</span><br>
+            <span>Arbeiten</span><br>
         </td>
-        <td class="entries"></td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
     </tr>
     <tr>
-
-        <td><span class="vertical_text">78</span></td>
-        <td class="entries">
-            <span>Megafach</span></td>
-        <td class="entries">
-            <span>- Wasteland</span><br>
-            <span>- Chillout</span><br>
+        <td class="entries"> <span>Eine neue Woche</span><br>
         </td>
-        <td class="entries">
-            <span>Einer</span>
+        <td class="entries"> <span>Feierabend</span><br>
+            <span>Feierabend</span><br>
         </td>
-        <td class="entries"></td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
+    </tr>
+    <!-- DAY 1 -->
+    <tr>
+        <td rowspan="4" style="font-size: 10pt;font-weight: bold;text-align: center;width: 191px;">
+            <span>Mo</span><br>
+            <span>25.06.2021</span> </td>
+        <td class="entries" style="
+    width: 254px;"> <span>Eine neue Woche</span><br>
+        </td>
+        <td class="entries" style="
+    width: 905px;"> <span>Schlafen</span><br>
+            <span>Schlafen</span><br>
+        </td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
     </tr>
     <tr>
-        <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
-            <span>Di</span><br>
-            <span>19.06.2021</span>
+        <td class="entries"> <span>Eine neue Woche</span><br>
         </td>
-        <td>
-            <span class="vertical_text">12</span>
+        <td class="entries"> <span>Frühstücken</span><br>
+            <span>Frühstücken</span><br>
         </td>
-        <td class="entries">
-            <span>Ein anderes Fach</span></td>
-        <td class="entries">
-            <span>Tassen</span><br>
-            <span>Teller</span><br>
+        <td class="entries"> <span>WochenendKiller</span> <br>
         </td>
-        <td class="entries">
-            <span>Anders</span>
-        </td>
-        <td class="entries"></td>
     </tr>
     <tr>
-
-        <td><span class="vertical_text">34</span></td>
-        <td class="entries">
-            <span>Ein anderes Fach</span></td>
-        <td class="entries">
-            <span>Unix</span><br>
-            <span>Linux</span><br>
+        <td class="entries"> <span>Eine neue Woche</span><br>
         </td>
-        <td class="entries">
-            <span>Anders</span>
+        <td class="entries"> <span>Arbeiten</span><br>
+            <span>Arbeiten</span><br>
         </td>
-        <td class="entries"></td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
     </tr>
     <tr>
-
-        <td><span class="vertical_text">56</span></td>
-        <td class="entries">
-            <span>Ein anderes Fach</span></td>
-        <td class="entries">
-            <span>Windows</span><br>
-            <span>Max</span><br>
+        <td class="entries"> <span>Eine neue Woche</span><br>
         </td>
-        <td class="entries">
-            <span>Anders</span>
+        <td class="entries"> <span>Feierabend</span><br>
+            <span>Feierabend</span><br>
         </td>
-        <td class="entries"></td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
+    </tr>
+    <!-- DAY 1 -->
+    <tr>
+        <td rowspan="4" style="font-size: 10pt;font-weight: bold;text-align: center;width: 191px;">
+            <span>Mo</span><br>
+            <span>25.06.2021</span> </td>
+        <td class="entries" style="
+    width: 254px;"> <span>Eine neue Woche</span><br>
+        </td>
+        <td class="entries" style="
+    width: 905px;"> <span>Schlafen</span><br>
+            <span>Schlafen</span><br>
+        </td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
     </tr>
     <tr>
-
-        <td><span class="vertical_text">78</span></td>
-        <td class="entries">
-            <span>Ein anderes Fach</span></td>
-        <td class="entries">
-            <span>Mac</span><br>
-            <span>Gifception</span><br>
+        <td class="entries"> <span>Eine neue Woche</span><br>
         </td>
-        <td class="entries">
-            <span>Anders</span>
+        <td class="entries"> <span>Frühstücken</span><br>
+            <span>Frühstücken</span><br>
         </td>
-        <td class="entries"></td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
     </tr>
     <tr>
-        <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
-            <span>Mi</span><br>
-            <span>20.06.2021</span>
+        <td class="entries"> <span>Eine neue Woche</span><br>
         </td>
-        <td>
-            <span class="vertical_text">12</span>
+        <td class="entries"> <span>Arbeiten</span><br>
+            <span>Arbeiten</span><br>
         </td>
-        <td class="entries">
-            <span>Doofes Fach</span></td>
-        <td class="entries">
-            <span>Mathe</span><br>
-            <span>Mathe</span><br>
+        <td class="entries"> <span>WochenendKiller</span> <br>
         </td>
-        <td class="entries">
-            <span>MCDoof</span>
-        </td>
-        <td class="entries"></td>
     </tr>
     <tr>
-
-        <td><span class="vertical_text">34</span></td>
-        <td class="entries">
-            <span>Doofes Fach</span></td>
-        <td class="entries">
-            <span>Englisch</span><br>
-            <span>Englisch</span><br>
+        <td class="entries"> <span>Eine neue Woche</span><br>
         </td>
-        <td class="entries">
-            <span>MCDoof</span>
+        <td class="entries"> <span>Feierabend</span><br>
+            <span>Feierabend</span><br>
         </td>
-        <td class="entries"></td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
     </tr>
-    <tr>
-
-        <td><span class="vertical_text">56</span></td>
-        <td class="entries">
-            <span>Doofes Fach</span></td>
-        <td class="entries">
-            <span>Geo</span><br>
-            <span>Geo</span><br>
-        </td>
-        <td class="entries">
-            <span>MCDoof</span>
-        </td>
-        <td class="entries"></td>
-    </tr>
-    <tr>
-
-        <td><span class="vertical_text">78</span></td>
-        <td class="entries">
-            <span>Doofes Fach</span></td>
-        <td class="entries">
-            <span>Sport</span><br>
-            <span>Sport</span><br>
-        </td>
-        <td class="entries">
-            <span>MCDoof</span>
-        </td>
-        <td class="entries"></td>
-    </tr>
+    </tbody>
+</table>
+<p style="page-break-before: always">
+    <!-- NEW PAGE HEADER --> </p>
+<div>
+    <table>
+        <tbody>
         <tr>
-            <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
-                <span>Do</span><br>
-                <span>21.06.2021</span>
-            </td>
-            <td>
-                <span class="vertical_text">12</span>
-            </td>
-            <td class="entries">
-                <span>Komisches Fach</span></td>
-            <td class="entries">
-                <span>Milch mit Zucker</span><br>
-                <span>Milch mit Zucker</span><br>
-            </td>
-            <td class="entries">
-                <span>DerDozent</span>
-            </td>
-            <td class="entries"></td>
+            <td class="header-td">Klassenbuch Woche vom <span class="entries">25.06.2021</span>
+                bis <span class="entries">29.06.2021</span></td>
+            <td class="right"><img class="logo" src="bfz-logo.jpg" alt="logo"></td>
         </tr>
-    <tr>
-
-        <td><span class="vertical_text">34</span></td>
-        <td class="entries">
-            <span>Komisches Fach</span></td>
-        <td class="entries">
-            <span>Tee ohne Milch</span><br>
-            <span>Tee ohne Milch</span><br>
-        </td>
-        <td class="entries">
-            <span>DerDozent</span>
-        </td>
-        <td class="entries"></td>
-    </tr>
-    <tr>
-
-        <td><span class="vertical_text">56</span></td>
-        <td class="entries">
-            <span>Komisches Fach</span></td>
-        <td class="entries">
-            <span>Mango mit Wasser</span><br>
-            <span>Mango mit Wasser</span><br>
-        </td>
-        <td class="entries">
-            <span>DerDozent</span>
-        </td>
-        <td class="entries"></td>
-    </tr>
-    <tr>
-
-        <td><span class="vertical_text">78</span></td>
-        <td class="entries">
-            <span>Komisches Fach</span></td>
-        <td class="entries">
-            <span>Erdbeeren vom Feld</span><br>
-            <span>Erdbeeren vom Feld</span><br>
-        </td>
-        <td class="entries">
-            <span>DerDozent</span>
-        </td>
-        <td class="entries"></td>
-        </tr>
-        <tr>
-            <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
-                <span>Fr</span><br>
-                <span>22.06.2021</span>
-            </td>
-            <td>
-                <span class="vertical_text">12</span>
-            </td>
-            <td class="entries">
-                <span>Das Fach</span></td>
-            <td class="entries">
-                <span>Erste Stunde</span><br>
-                <span>Zweite Stunde</span><br>
-            </td>
-            <td class="entries">
-                <span>Super Dozent</span>
-            </td>
-            <td class="entries"></td>
-        </tr>
-    <tr>
-
-        <td><span class="vertical_text">34</span></td>
-        <td class="entries">
-            <span>Das Fach</span></td>
-        <td class="entries">
-            <span>Dritte Stunde</span><br>
-            <span>Vierte Stunde</span><br>
-        </td>
-        <td class="entries">
-            <span>Super Dozent</span>
-        </td>
-        <td class="entries"></td>
-    </tr>
-    <tr>
-
-        <td><span class="vertical_text">56</span></td>
-        <td class="entries">
-            <span>Das Fach</span></td>
-        <td class="entries">
-            <span>Fünfte Stunde</span><br>
-            <span>Sechse Stunde</span><br>
-        </td>
-        <td class="entries">
-            <span>Super Dozent</span>
-        </td>
-        <td class="entries"></td>
-    </tr>
-    <tr>
-
-        <td><span class="vertical_text">78</span></td>
-        <td class="entries">
-            <span>Das Fach</span></td>
-        <td class="entries">
-            <span>Siebte Stunde</span><br>
-            <span>Achte Stunde</span><br>
-        </td>
-        <td class="entries">
-            <span>Super Dozent</span>
-        </td>
-        <td class="entries"></td>
-        </tr>
+        </tbody>
     </table>
-
-    <p style = "font-size: 12pt; font-weight: bold; margin-top: 7mm;">Bemerkungen:</p>
-    <p><br><br><br><br></p>
-
+    <hr>
+    <table>
+        <tbody>
+        <tr>
+            <th style="font-size: 11pt;text-align:center;width: 190px;">Tag</th>
+            <th style="font-size: 11pt;text-align:center;padding-left: 2mm;padding-right: 2mm;width: 250px;">Themen-<br>
+                block</th>
+            <th style="font-size: 14pt;text-align:center;padding-left: 4cm;padding-right: 4cm;width: 900px;">Inhalt</th>
+            <th style="font-size: 10pt; text-align:center; font-weight: normal; padding-left: 2mm; padding-right: 2mm;">durch-<br>
+                geführt<br>
+                von</th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<table>
+    <tbody>
+    <!-- DAY 1 -->
+    <tr>
+        <td rowspan="4" style="font-size: 10pt;font-weight: bold;text-align: center;width: 191px;">
+            <span>Mo</span><br>
+            <span>25.06.2021</span> </td>
+        <td class="entries" style="
+    width: 254px;"> <span>Eine neue Woche</span><br>
+        </td>
+        <td class="entries" style="
+    width: 905px;"> <span>Schlafen</span><br>
+            <span>Schlafen</span><br>
+        </td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
+    </tr>
+    <tr>
+        <td class="entries"> <span>Eine neue Woche</span><br>
+        </td>
+        <td class="entries"> <span>Frühstücken</span><br>
+            <span>Frühstücken</span><br>
+        </td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
+    </tr>
+    <tr>
+        <td class="entries"> <span>Eine neue Woche</span><br>
+        </td>
+        <td class="entries"> <span>Arbeiten</span><br>
+            <span>Arbeiten</span><br>
+        </td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
+    </tr>
+    <tr>
+        <td class="entries"> <span>Eine neue Woche</span><br>
+        </td>
+        <td class="entries"> <span>Feierabend</span><br>
+            <span>Feierabend</span><br>
+        </td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
+    </tr>
+    <!-- DAY 1 -->
+    <tr>
+        <td rowspan="4" style="font-size: 10pt;font-weight: bold;text-align: center;width: 191px;">
+            <span>Mo</span><br>
+            <span>25.06.2021</span> </td>
+        <td class="entries" style="
+    width: 254px;"> <span>Eine neue Woche</span><br>
+        </td>
+        <td class="entries" style="
+    width: 905px;"> <span>Schlafen</span><br>
+            <span>Schlafen</span><br>
+        </td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
+    </tr>
+    <tr>
+        <td class="entries"> <span>Eine neue Woche</span><br>
+        </td>
+        <td class="entries"> <span>Frühstücken</span><br>
+            <span>Frühstücken</span><br>
+        </td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
+    </tr>
+    <tr>
+        <td class="entries"> <span>Eine neue Woche</span><br>
+        </td>
+        <td class="entries"> <span>Arbeiten</span><br>
+            <span>Arbeiten</span><br>
+        </td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
+    </tr>
+    <tr>
+        <td class="entries"> <span>Eine neue Woche</span><br>
+        </td>
+        <td class="entries"> <span>Feierabend</span><br>
+            <span>Feierabend</span><br>
+        </td>
+        <td class="entries"> <span>WochenendKiller</span> <br>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<p style="font-size: 12pt; font-weight: bold; margin-top: 7mm;">Bemerkungen:</p>
+<p><br>
+</p>
 </body>
-
 </html>

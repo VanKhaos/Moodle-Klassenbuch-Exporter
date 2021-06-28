@@ -19,7 +19,6 @@
           <RowConstraints maxHeight="348.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="348.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="348.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="348.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Button mnemonicParsing="false" onAction="#openFile" prefHeight="25.0" prefWidth="216.0" text="Lade CSV Datei" textAlignment="CENTER">
@@ -27,11 +26,10 @@
                   <Insets left="-20.0" top="-5.0" />
                </opaqueInsets></Button>
             <Label fx:id="txtFileLoad" text="Status: Keine Daten geladen!" textFill="RED" GridPane.rowIndex="1" />
-            <DatePicker fx:id="datePickTo" prefHeight="25.0" prefWidth="218.0" promptText="Bis" GridPane.rowIndex="4" />
-            <DatePicker fx:id="datePickFrom" prefHeight="25.0" prefWidth="216.0" promptText="Von" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#savePDF" prefHeight="25.0" prefWidth="217.0" text="Erstelle PDF" GridPane.rowIndex="5" />
-            <Label fx:id="txtSavePDF" text="Status: PDF wurde nicht erstellt!" textFill="RED" GridPane.rowIndex="6" />
-            <Label prefHeight="15.0" prefWidth="215.0" text="NUR EINE WOCHE ( MO-FR ) AUSWÄHLEN" textAlignment="CENTER" GridPane.rowIndex="2">
+            <DatePicker fx:id="datePickFrom" prefHeight="25.0" prefWidth="216.0" promptText="START MONTAG" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#savePDF" prefHeight="25.0" prefWidth="217.0" text="Erstelle PDF" GridPane.rowIndex="4" />
+            <Label fx:id="txtSavePDF" text="Status: PDF wurde nicht erstellt!" textFill="RED" GridPane.rowIndex="5" />
+            <Label prefHeight="15.0" prefWidth="215.0" text="START MONTAG WÄHLEN" textAlignment="CENTER" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>

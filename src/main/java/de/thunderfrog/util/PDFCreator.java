@@ -21,9 +21,10 @@ public class PDFCreator {
     /**
      * PDF aus HTML generieren mit dem Inhalt einer Liste von MoodleData
      * @param list
+     * @param date
      * @throws IOException
      */
-    public static void generate(List<MoodleData> list) throws IOException {
+    public static void generate(List<MoodleData> list, String date) throws IOException {
         //  Template System von Thymeleaf initialisieren
         ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
         templateResolver.setSuffix(".html");
@@ -33,19 +34,29 @@ public class PDFCreator {
 
         //  Context in das Template schreiben
         Context ctx = new Context();
+
+        int j = 0;
         for (int i = 0; i < list.size(); i++) {
-            ctx.setVariable("WEEKDAY_" + i, list.get(i).getWeekday());
-            ctx.setVariable("STARTDATE_" + i, DateFormatter.parseDateTime(list.get(i).getDateTime()));
-            ctx.setVariable("SUBJECT_" + i, list.get(i).getSubject());
-            ctx.setVariable("LESSONONE_" + i, list.get(i).getLessonOne());
-            ctx.setVariable("LESSONTWO_" + i, list.get(i).getLessonTwo());
-            ctx.setVariable("LESSONTHREE_" + i, list.get(i).getLessonThree());
-            ctx.setVariable("LESSONFOUR_" + i, list.get(i).getLessonFour());
-            ctx.setVariable("LESSONFIVE_" + i, list.get(i).getLessonFive());
-            ctx.setVariable("LESSONSIX_" + i, list.get(i).getLessonSix());
-            ctx.setVariable("LESSONSEVEN_" + i, list.get(i).getLessonSeven());
-            ctx.setVariable("LESSONEIGHT_" + i, list.get(i).getLessonEight());
-            ctx.setVariable("LECTURER_" + i, list.get(i).getLecturer());
+            if(DateFormatter.parseDateTime(list.get(i).getDateTime()).compareTo(date) >= 0){
+                System.out.println("j = " + j);
+                ctx.setVariable("WEEKDAYSTART", date);
+                ctx.setVariable("WEEKDAYEND", DateFormatter.parseDateTime(list.get(i).getDateTime()));
+                ctx.setVariable("WEEKDAY_" + j, list.get(i).getWeekday());
+                ctx.setVariable("STARTDATE_" + j, DateFormatter.parseDateTime(list.get(i).getDateTime()));
+                ctx.setVariable("SUBJECT_" + j, list.get(i).getSubject());
+                ctx.setVariable("LESSONONE_" + j, list.get(i).getLessonOne());
+                ctx.setVariable("LESSONTWO_" + j, list.get(i).getLessonTwo());
+                ctx.setVariable("LESSONTHREE_" + j, list.get(i).getLessonThree());
+                ctx.setVariable("LESSONFOUR_" + j, list.get(i).getLessonFour());
+                ctx.setVariable("LESSONFIVE_" + j, list.get(i).getLessonFive());
+                ctx.setVariable("LESSONSIX_" + j, list.get(i).getLessonSix());
+                ctx.setVariable("LESSONSEVEN_" + j, list.get(i).getLessonSeven());
+                ctx.setVariable("LESSONEIGHT_" + j, list.get(i).getLessonEight());
+                ctx.setVariable("LECTURER_" + j, list.get(i).getLecturer());
+                j++;
+            }else{
+                System.out.println("Datum Ungleich!");
+            }
         }
 
         //  Context mit den Platzhaltern im Template zusammenfügen

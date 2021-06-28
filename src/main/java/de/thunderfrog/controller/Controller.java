@@ -23,7 +23,6 @@ public class Controller {
     @FXML
     public Label txtFileLoad;
     public Label txtSavePDF;
-    public DatePicker datePickTo;
     public DatePicker datePickFrom;
 
     private List<MoodleData> list;
@@ -84,20 +83,11 @@ public class Controller {
     public void savePDF(ActionEvent actionEvent) {
         try {
             //  Funktionsaufruf um die PDF zu erstellen
-            PDFCreator.generate(list);
+            PDFCreator.generate(list, DateFormatter.parseDateTime(datePickFrom.getValue()));
 
             //  Status Text auf der GUI updaten
             txtSavePDF.setTextFill(Color.GREEN);
             txtSavePDF.setText("Status: PDF erstellt!");
-
-            long epoch = System.currentTimeMillis()/1000;
-            LocalDate dateFrom = datePickFrom.getValue();
-            LocalDate dateTo = datePickTo.getValue();
-
-            ZonedDateTime epochFrom = dateFrom.atStartOfDay(ZoneId.systemDefault());
-            ZonedDateTime epochTo = dateTo.atStartOfDay(ZoneId.systemDefault());
-
-            System.out.println("Datum von " + epochFrom + " bis " + epochTo);
 
         //  Fehlerbehandlung
         }catch (IOException e){
