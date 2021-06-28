@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * JavaFX App
+ * Standard JavaFX Start prozedur
  */
 public class App extends Application {
 
@@ -18,10 +18,10 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("main"), 400, 170);
+        scene = new Scene(loadFXML("main"), 240, 340);
         stage.setScene(scene);
         stage.getIcons().add(new Image(String.valueOf(App.class.getResource("/images/education.png"))));
-        stage.setTitle("BFZ - Moodle Klassenbuch Exporter");
+        stage.setTitle("BFZ - MKE");
         stage.setResizable(false);
         stage.show();
     }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -150,10 +150,10 @@ td {
 </head>
 
 <body>
-<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
+<div>
     <table>
         <tr>
-            <td class = "header-td">Klassenbuch	Woche vom <span class="entries" th:text="${STARTDATE}"></span> bis <span class="entries"></span></td>
+            <td class = "header-td">Klassenbuch	Woche vom <span class="entries"></span> bis <span class="entries"></span></td>
             <td class="right"><img class="logo" src="bfz-logo.jpg" alt="logo"></td>
         </tr>
     </table>
@@ -177,20 +177,20 @@ td {
 <table class="table1">
     <tr>
         <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
-            <span th:text="${WEEKDAY_0}"></span><br>
-            <span th:text="${STARTDATE_0}"></span>
+            <span>Mo</span><br>
+            <span>18.06.2021</span>
         </td>
         <td>
             <span class="vertical_text">12</span>
         </td>
         <td class="entries">
-            <span th:text="${SUBJECT_0}"></span></td>
+            <span>Megafach</span></td>
         <td class="entries">
-            <span th:text="${LESSONONE_0}"></span><br>
-            <span th:text="${LESSONTWO_0}"></span><br>
+            <span>- ein Tolles Thema</span><br>
+            <span>- wirklich tolles Thema</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_0}"></span>
+            <span>Einer</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -198,13 +198,13 @@ td {
 
         <td><span class="vertical_text">34</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_0}"></span></td>
+            <span>Megafach</span></td>
         <td class="entries">
-            <span th:text="${LESSONTHREE_0}"></span><br>
-            <span th:text="${LESSONFOUR_0}"></span><br>
+            <span>- mehr Thema zum Thema</span><br>
+            <span>- Worms 3 </span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_0}"></span>
+            <span>Einer</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -212,13 +212,13 @@ td {
 
         <td><span class="vertical_text">56</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_0}"></span></td>
+            <span>Megafach</span></td>
         <td class="entries">
-            <span th:text="${LESSONFIVE_0}"></span><br>
-            <span th:text="${LESSONSIX_0}"></span><br>
+            <span>- Duke Nuken Forever</span><br>
+            <span>- Destiny</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_0}"></span>
+            <span>Einer</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -226,32 +226,32 @@ td {
 
         <td><span class="vertical_text">78</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_0}"></span></td>
+            <span>Megafach</span></td>
         <td class="entries">
-            <span th:text="${LESSONSEVEN_0}"></span><br>
-            <span th:text="${LESSONEIGHT_0}"></span><br>
+            <span>- Wasteland</span><br>
+            <span>- Chillout</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_0}"></span>
+            <span>Einer</span>
         </td>
         <td class="entries"></td>
     </tr>
     <tr>
         <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
-            <span th:text="${WEEKDAY_1}"></span><br>
-            <span th:text="${STARTDATE_1}"></span>
+            <span>Di</span><br>
+            <span>19.06.2021</span>
         </td>
         <td>
             <span class="vertical_text">12</span>
         </td>
         <td class="entries">
-            <span th:text="${SUBJECT_1}"></span></td>
+            <span>Ein anderes Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONONE_1}"></span><br>
-            <span th:text="${LESSONTWO_1}"></span><br>
+            <span>Tassen</span><br>
+            <span>Teller</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_1}"></span>
+            <span>Anders</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -259,13 +259,13 @@ td {
 
         <td><span class="vertical_text">34</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_1}"></span></td>
+            <span>Ein anderes Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONTHREE_1}"></span><br>
-            <span th:text="${LESSONFOUR_1}"></span><br>
+            <span>Unix</span><br>
+            <span>Linux</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_1}"></span>
+            <span>Anders</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -273,13 +273,13 @@ td {
 
         <td><span class="vertical_text">56</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_1}"></span></td>
+            <span>Ein anderes Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONFIVE_1}"></span><br>
-            <span th:text="${LESSONSIX_1}"></span><br>
+            <span>Windows</span><br>
+            <span>Max</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_1}"></span>
+            <span>Anders</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -287,32 +287,32 @@ td {
 
         <td><span class="vertical_text">78</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_1}"></span></td>
+            <span>Ein anderes Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONSEVEN_1}"></span><br>
-            <span th:text="${LESSONEIGHT_1}"></span><br>
+            <span>Mac</span><br>
+            <span>Gifception</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_1}"></span>
+            <span>Anders</span>
         </td>
         <td class="entries"></td>
     </tr>
     <tr>
         <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
-            <span th:text="${WEEKDAY_2}"></span><br>
-            <span th:text="${STARTDATE_2}"></span>
+            <span>Mi</span><br>
+            <span>20.06.2021</span>
         </td>
         <td>
             <span class="vertical_text">12</span>
         </td>
         <td class="entries">
-            <span th:text="${SUBJECT_2}"></span></td>
+            <span>Doofes Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONONE_2}"></span><br>
-            <span th:text="${LESSONTWO_2}"></span><br>
+            <span>Mathe</span><br>
+            <span>Mathe</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_2}"></span>
+            <span>MCDoof</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -320,13 +320,13 @@ td {
 
         <td><span class="vertical_text">34</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_2}"></span></td>
+            <span>Doofes Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONTHREE_2}"></span><br>
-            <span th:text="${LESSONFOUR_2}"></span><br>
+            <span>Englisch</span><br>
+            <span>Englisch</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_2}"></span>
+            <span>MCDoof</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -334,13 +334,13 @@ td {
 
         <td><span class="vertical_text">56</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_2}"></span></td>
+            <span>Doofes Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONFIVE_2}"></span><br>
-            <span th:text="${LESSONSIX_2}"></span><br>
+            <span>Geo</span><br>
+            <span>Geo</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_2}"></span>
+            <span>MCDoof</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -348,32 +348,32 @@ td {
 
         <td><span class="vertical_text">78</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_2}"></span></td>
+            <span>Doofes Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONSEVEN_2}"></span><br>
-            <span th:text="${LESSONEIGHT_2}"></span><br>
+            <span>Sport</span><br>
+            <span>Sport</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_2}"></span>
+            <span>MCDoof</span>
         </td>
         <td class="entries"></td>
     </tr>
         <tr>
             <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
-                <span th:text="${WEEKDAY_3}"></span><br>
-                <span th:text="${STARTDATE_3}"></span>
+                <span>Do</span><br>
+                <span>21.06.2021</span>
             </td>
             <td>
                 <span class="vertical_text">12</span>
             </td>
             <td class="entries">
-                <span th:text="${SUBJECT_3}"></span></td>
+                <span>Komisches Fach</span></td>
             <td class="entries">
-                <span th:text="${LESSONONE_3}"></span><br>
-                <span th:text="${LESSONTWO_3}"></span><br>
+                <span>Milch mit Zucker</span><br>
+                <span>Milch mit Zucker</span><br>
             </td>
             <td class="entries">
-                <span th:text="${LECTURER_3}"></span>
+                <span>DerDozent</span>
             </td>
             <td class="entries"></td>
         </tr>
@@ -381,13 +381,13 @@ td {
 
         <td><span class="vertical_text">34</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_3}"></span></td>
+            <span>Komisches Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONTHREE_3}"></span><br>
-            <span th:text="${LESSONFOUR_3}"></span><br>
+            <span>Tee ohne Milch</span><br>
+            <span>Tee ohne Milch</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_3}"></span>
+            <span>DerDozent</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -395,13 +395,13 @@ td {
 
         <td><span class="vertical_text">56</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_3}"></span></td>
+            <span>Komisches Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONFIVE_3}"></span><br>
-            <span th:text="${LESSONSIX_3}"></span><br>
+            <span>Mango mit Wasser</span><br>
+            <span>Mango mit Wasser</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_3}"></span>
+            <span>DerDozent</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -409,32 +409,32 @@ td {
 
         <td><span class="vertical_text">78</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_3}"></span></td>
+            <span>Komisches Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONSEVEN_3}"></span><br>
-            <span th:text="${LESSONEIGHT_3}"></span><br>
+            <span>Erdbeeren vom Feld</span><br>
+            <span>Erdbeeren vom Feld</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_3}"></span>
+            <span>DerDozent</span>
         </td>
         <td class="entries"></td>
         </tr>
         <tr>
             <td rowspan = "4" style = "font-size: 10pt; font-weight: bold; text-align: center;">
-                <span th:text="${WEEKDAY_4}"></span><br>
-                <span th:text="${STARTDATE_4}"></span>
+                <span>Fr</span><br>
+                <span>22.06.2021</span>
             </td>
             <td>
                 <span class="vertical_text">12</span>
             </td>
             <td class="entries">
-                <span th:text="${SUBJECT_4}"></span></td>
+                <span>Das Fach</span></td>
             <td class="entries">
-                <span th:text="${LESSONONE_4}"></span><br>
-                <span th:text="${LESSONTWO_4}"></span><br>
+                <span>Erste Stunde</span><br>
+                <span>Zweite Stunde</span><br>
             </td>
             <td class="entries">
-                <span th:text="${LECTURER_4}"></span>
+                <span>Super Dozent</span>
             </td>
             <td class="entries"></td>
         </tr>
@@ -442,13 +442,13 @@ td {
 
         <td><span class="vertical_text">34</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_4}"></span></td>
+            <span>Das Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONTHREE_4}"></span><br>
-            <span th:text="${LESSONFOUR_4}"></span><br>
+            <span>Dritte Stunde</span><br>
+            <span>Vierte Stunde</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_4}"></span>
+            <span>Super Dozent</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -456,13 +456,13 @@ td {
 
         <td><span class="vertical_text">56</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_4}"></span></td>
+            <span>Das Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONFIVE_4}"></span><br>
-            <span th:text="${LESSONSIX_4}"></span><br>
+            <span>Fünfte Stunde</span><br>
+            <span>Sechse Stunde</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_4}"></span>
+            <span>Super Dozent</span>
         </td>
         <td class="entries"></td>
     </tr>
@@ -470,13 +470,13 @@ td {
 
         <td><span class="vertical_text">78</span></td>
         <td class="entries">
-            <span th:text="${SUBJECT_4}"></span></td>
+            <span>Das Fach</span></td>
         <td class="entries">
-            <span th:text="${LESSONSEVEN_4}"></span><br>
-            <span th:text="${LESSONEIGHT_4}"></span><br>
+            <span>Siebte Stunde</span><br>
+            <span>Achte Stunde</span><br>
         </td>
         <td class="entries">
-            <span th:text="${LECTURER_4}"></span>
+            <span>Super Dozent</span>
         </td>
         <td class="entries"></td>
         </tr>
