@@ -4,7 +4,6 @@ module de.thunderfrog {
     requires commons.csv;
     requires thymeleaf;
     requires java.xml;
-    requires flying.saucer.pdf;
     requires openhtmltopdf.pdfbox;
     requires org.jsoup;
 

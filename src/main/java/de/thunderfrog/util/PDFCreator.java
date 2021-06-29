@@ -2,8 +2,11 @@ package de.thunderfrog.util;
 
 import java.io.*;
 import java.nio.file.FileSystems;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.List;
 import de.thunderfrog.MoodleData;
 import org.jsoup.Jsoup;
@@ -24,7 +27,7 @@ public class PDFCreator {
      * @param date
      * @throws IOException
      */
-    public static void generate(List<MoodleData> list, String date) throws IOException {
+    public static void generate(List<MoodleData> list, String date) throws IOException, ParseException {
         //  Template System von Thymeleaf initialisieren
         ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
         templateResolver.setSuffix(".html");
@@ -34,13 +37,22 @@ public class PDFCreator {
 
         //  Context in das Template schreiben
         Context ctx = new Context();
-
         int j = 0;
         for (int i = 0; i < list.size(); i++) {
             if(DateFormatter.parseDateTime(list.get(i).getDateTime()).compareTo(date) >= 0){
-                System.out.println("j = " + j);
+                //System.out.println("j = " + j);
                 ctx.setVariable("WEEKDAYSTART", date);
-                ctx.setVariable("WEEKDAYEND", DateFormatter.parseDateTime(list.get(i).getDateTime()));
+
+                //  Selected Date plus 4 Tage
+                String nDate = date;
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy");
+                Calendar c = Calendar.getInstance();
+                c.setTime(simpleDateFormat.parse(nDate));
+                c.add(Calendar.DATE,4);
+                nDate = simpleDateFormat.format(c.getTime());
+
+
+                ctx.setVariable("WEEKDAYEND", nDate);
                 ctx.setVariable("WEEKDAY_" + j, list.get(i).getWeekday());
                 ctx.setVariable("STARTDATE_" + j, DateFormatter.parseDateTime(list.get(i).getDateTime()));
                 ctx.setVariable("SUBJECT_" + j, list.get(i).getSubject());
@@ -89,13 +101,13 @@ public class PDFCreator {
             e.printStackTrace();
         }
 
-//        //  HTML Temp Datei wieder löschen
-//        File tempFile = new File("temp.html");
-//        if(tempFile.delete()){
-//            System.out.println("Temp File deleted!");
-//        }else{
-//            System.out.println("Failed to delete the File");
-//        }
+        //  HTML Temp Datei wieder löschen
+        File tempFile = new File("temp.html");
+        if(tempFile.delete()){
+            System.out.println("Temp File deleted!");
+        }else{
+            System.out.println("Failed to delete the File");
+        }
 
     }
 
@@ -107,10 +119,12 @@ public class PDFCreator {
      */
     private static void htmlToPdf(String inputHTML, String outputPdf) throws IOException {
         Document doc = html5ParseDocument(inputHTML);
+
         String baseUri = FileSystems.getDefault()
-                .getPath("D:/", "#Java/", "Moodle Klassenbuch Exporter/")
+                .getPath("src", "main", "resources","template")
                 .toUri()
                 .toString();
+
         OutputStream os = new FileOutputStream(outputPdf);
         PdfRendererBuilder builder = new PdfRendererBuilder();
         builder.withUri(outputPdf);

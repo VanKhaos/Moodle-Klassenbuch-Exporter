@@ -2,6 +2,7 @@ package de.thunderfrog.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -83,6 +84,7 @@ public class Controller {
     public void savePDF(ActionEvent actionEvent) {
         try {
             //  Funktionsaufruf um die PDF zu erstellen
+
             PDFCreator.generate(list, DateFormatter.parseDateTime(datePickFrom.getValue()));
 
             //  Status Text auf der GUI updaten
@@ -90,7 +92,7 @@ public class Controller {
             txtSavePDF.setText("Status: PDF erstellt!");
 
         //  Fehlerbehandlung
-        }catch (IOException e){
+        }catch (IOException | ParseException e){
             txtSavePDF.setTextFill(Color.RED);
             txtSavePDF.setText("Status: Es ist ein Fehler aufgetreten");
             e.printStackTrace();

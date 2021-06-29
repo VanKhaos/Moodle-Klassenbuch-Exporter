@@ -3,133 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        body {
-    font-family: Verdana, sans-serif;
-    font-size: 12px;
-}
-
-@page {
-
-    @bottom-left {
-        content: element(footer);
-        vertical-align: top;
-        padding-top: 10px;
-    }
-
-    @top-right {
-        content: element(header);
-        vertical-align: bottom;
-        padding-bottom: 10px;
-    }
-}
-
-div.header {
-    position: running(header);
-}
-
-div.footer {
-    display: block;
-    margin-top: 0.5cm;
-    position: running(footer);
-}
-
-#pagenumber:before {
-    content: counter(page);
-}
-
-#pagecount:before {
-    content: counter(pages);
-}
-
-.logo-container {
-    text-align: right;
-}
-
-.page-count {
-    text-align: right;
-}
-
-.logo {
-    height:30px
-}
-
-p {
-    font-size: 12px;
-}
-
-.footer {
-    text-align: center;
-}
-
-.right {
-    text-align: right;
-    border: none;
-}
-
-.left {
-    text-align: left;
-}
-
-.bottom {
-    vertical-align: bottom;
-}
-
-table {
-    border-collapse: collapse;
-  table-layout: fixed;
-}
-
-table.fixed { table-layout:fixed; }
-table.fixed td { overflow: hidden; }
-
-th {
-    border: 2px solid black;
-}
-
-td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  width: auto;
-    overflow: hidden;
-    word-wrap: break-word;
-}
-
-hr {
-    background-color: #000000;
-    border: dashed #000000 0.5px;
-    height: 1px;
-}
-
-.page-break {
-    page-break-after: always;
-}
-
-.next-page {
-    page-break-before: always;
-}
-
-
-.entries {
-    font-size: 10pt;
-    padding: 5pt;
-    color: darkslategray;
-}
-
-
-
-.header-td {
-    border: none;
-}
-
-    </style>
+         body {
+         font-family: Verdana, sans-serif;
+         font-size: 12px;
+         }
+         @page {
+         @bottom-left {
+         content: element(footer);
+         vertical-align: top;
+         padding-top: 10px;
+         }
+         @top-right {
+         content: element(header);
+         vertical-align: bottom;
+         padding-bottom: 10px;
+         }
+         margin-top: 3.3cm;
+         margin-left: 2cm;
+         margin-bottom: 3.3cm;
+         size: A4 portrait;
+         }
+         div.header {
+         position: running(header);
+         }
+         div.footer {
+         display: block;
+         margin-top: 0.5cm;
+         position: running(footer);
+         }
+         #pagenumber:before {
+         content: counter(page);
+         }
+         #pagecount:before {
+         content: counter(pages);
+         }
+         .logo-container {
+         text-align: right;
+         }
+         .page-count {
+         text-align: right;
+         }
+         .logo {
+         height:30px
+         }
+         p {
+         font-size: 12px;
+         }
+         .footer {
+         text-align: center;
+         }
+         .right {
+         text-align: right;
+         border: none;
+         }
+         .left {
+         text-align: left;
+         }
+         .bottom {
+         vertical-align: bottom;
+         }
+         table {
+         width: 100%;
+         border-collapse: collapse;
+         table-layout: fixed;
+         }
+         hr {
+         background-color: #000000;
+         border: dashed #000000 0.5px;
+         height: 1px;
+         }
+         .entries {
+         font-size: 10pt;
+         padding: 5pt;
+         color: darkslategray;
+         }
+         th {
+         border: 2px solid black;
+         }
+         td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         }
+         .header-td {
+         border: none;
+         }
+      </style>
 </head>
 <body>
+<!-- HEADER -->
 <div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
     <table>
         <tbody>
         <tr>
             <td class="header-td">Klassenbuch Woche vom <span class="entries" th:text="${WEEKDAYSTART}"></span>
-                bis <span class="entries" th:text="${WEEKDAYEND}"></span></td>
+                bis <span class="entries" th:text="${WEEKDAYEND}"></span>
+            </td>
             <td class="right"><img class="logo" src="bfz-logo.jpg" alt="logo"></td>
         </tr>
         </tbody>
@@ -138,155 +106,192 @@ hr {
     <table>
         <tbody>
         <tr>
-            <th style="font-size: 11pt;text-align:center;width: 190px;">Tag</th>
-            <th style="font-size: 11pt;text-align:center;padding-left: 2mm;padding-right: 2mm;width: 250px;">Themen-<br>
-                block</th>
-            <th style="font-size: 14pt;text-align:center;padding-left: 4cm;padding-right: 4cm;width: 900px;">Inhalt</th>
-            <th style="font-size: 10pt; text-align:center; font-weight: normal; padding-left: 2mm; padding-right: 2mm;">durch-<br>
+            <th style="font-size: 11pt; text-align:center;width: 75px;">Tag</th>
+            <th style="font-size: 11pt; text-align:center; padding-left: 2mm; padding-right: 2mm;width: 150px;">Themen-<br>
+                block
+            </th>
+            <th style="font-size: 14pt; text-align:center; padding-left: 4cm; padding-right: 4cm;">Inhalt</th>
+            <th style="font-size: 10pt; text-align:center; font-weight: normal; padding-left: 2mm; padding-right: 2mm;width: 100px">durch-<br>
                 geführt<br>
-                von</th>
+                von
+            </th>
         </tr>
         </tbody>
     </table>
 </div>
 <table>
     <tbody>
-    <!-- DAY 1 -->
+    <!-- DAY1 -->
     <tr>
-        <td rowspan="4" style="font-size: 10pt;font-weight: bold;text-align: center;width: 191px;">
+        <td rowspan="4" style="font-size: 8pt; font-weight: bold; text-align: center;width: 75px;">
             <span th:text="${WEEKDAY_0}"></span><br>
-            <span th:text="${STARTDATE_0}"></span> </td>
-        <td class="entries" style="
-    width: 254px;"> <span th:text="${SUBJECT_0}"></span><br>
+            <span th:text="${STARTDATE_0}"></span>
         </td>
-        <td class="entries" style="
-    width: 905px;"> <span th:text="${LESSONONE_0}"></span><br>
-            <span th:text="${LESSONTWO_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_0}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONONE_0}"></span><br>
+            <span th:text="${LESSONTWO_0}"></span>
         </td>
-    </tr>
-    <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
-        </td>
-        <td class="entries"> <span th:text="${LESSONTHREE_0}"></span><br>
-            <span th:text="${LESSONFOUR_0}"></span><br>
-        </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries">
+            <span th:text="${LECTURER_0}"></span>
         </td>
     </tr>
     <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_0}"></span>
         </td>
-        <td class="entries"> <span th:text="${LESSONFIVE_0}"></span><br>
-            <span th:text="${LESSONSIX_0}"></span><br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONTHREE_0}"></span><br>
+            <span th:text="${LESSONFOUR_0}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
-        </td>
-    </tr>
-    <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
-        </td>
-        <td class="entries"> <span th:text="${LESSONSEVEN_0}"></span><br>
-            <span th:text="${LESSONEIGHT_0}"></span><br>
-        </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
-        </td>
-    </tr>
-    <!-- DAY 1 -->
-    <tr>
-        <td rowspan="4" style="font-size: 10pt;font-weight: bold;text-align: center;width: 191px;">
-            <span th:text="${WEEKDAY_0}"></span><br>
-            <span th:text="${STARTDATE_0}"></span> </td>
-        <td class="entries" style="
-    width: 254px;"> <span th:text="${SUBJECT_0}"></span><br>
-        </td>
-        <td class="entries" style="
-    width: 905px;"> <span th:text="${LESSONONE_0}"></span><br>
-            <span th:text="${LESSONTWO_0}"></span><br>
-        </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries">
+            <span th:text="${LECTURER_0}"></span>
         </td>
     </tr>
     <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_0}"></span>
         </td>
-        <td class="entries"> <span th:text="${LESSONTHREE_0}"></span><br>
-            <span th:text="${LESSONFOUR_0}"></span><br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONFIVE_0}"></span><br>
+            <span th:text="${LESSONSIX_0}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
-        </td>
-    </tr>
-    <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
-        </td>
-        <td class="entries"> <span th:text="${LESSONFIVE_0}"></span><br>
-            <span th:text="${LESSONSIX_0}"></span><br>
-        </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries">
+            <span th:text="${LECTURER_0}"></span>
         </td>
     </tr>
     <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_0}"></span>
         </td>
-        <td class="entries"> <span th:text="${LESSONSEVEN_0}"></span><br>
-            <span th:text="${LESSONEIGHT_0}"></span><br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONSEVEN_0}"></span><br>
+            <span th:text="${LESSONEIGHT_0}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
-        </td>
-    </tr>
-    <!-- DAY 1 -->
-    <tr>
-        <td rowspan="4" style="font-size: 10pt;font-weight: bold;text-align: center;width: 191px;">
-            <span th:text="${WEEKDAY_0}"></span><br>
-            <span th:text="${STARTDATE_0}"></span> </td>
-        <td class="entries" style="
-    width: 254px;"> <span th:text="${SUBJECT_0}"></span><br>
-        </td>
-        <td class="entries" style="
-    width: 905px;"> <span th:text="${LESSONONE_0}"></span><br>
-            <span th:text="${LESSONTWO_0}"></span><br>
-        </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries">
+            <span th:text="${LECTURER_0}"></span>
         </td>
     </tr>
+    <!-- DAY2 -->
     <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
+        <td rowspan="4" style="font-size: 8pt; font-weight: bold; text-align: center;width: 75px;">
+            <span th:text="${WEEKDAY_1}"></span><br>
+            <span th:text="${STARTDATE_1}"></span>
         </td>
-        <td class="entries"> <span th:text="${LESSONTHREE_0}"></span><br>
-            <span th:text="${LESSONFOUR_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_1}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONONE_1}"></span><br>
+            <span th:text="${LESSONTWO_1}"></span>
+        </td>
+        <td class="entries">
+            <span th:text="${LECTURER_1}"></span>
         </td>
     </tr>
     <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_1}"></span>
         </td>
-        <td class="entries"> <span th:text="${LESSONFIVE_0}"></span><br>
-            <span th:text="${LESSONSIX_0}"></span><br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONTHREE_1}"></span><br>
+            <span th:text="${LESSONFOUR_1}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries">
+            <span th:text="${LECTURER_1}"></span>
         </td>
     </tr>
     <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_1}"></span>
         </td>
-        <td class="entries"> <span th:text="${LESSONSEVEN_0}"></span><br>
-            <span th:text="${LESSONEIGHT_0}"></span><br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONFIVE_1}"></span><br>
+            <span th:text="${LESSONSIX_1}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries">
+            <span th:text="${LECTURER_1}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_1}"></span>
+        </td>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONSEVEN_1}"></span><br>
+            <span th:text="${LESSONEIGHT_1}"></span>
+        </td>
+        <td class="entries">
+            <span th:text="${LECTURER_1}"></span>
+        </td>
+    </tr>
+    <!-- DAY3 -->
+    <tr>
+        <td rowspan="4" style="font-size: 8pt; font-weight: bold; text-align: center;width: 75px;">
+            <span th:text="${WEEKDAY_2}"></span><br>
+            <span th:text="${STARTDATE_2}"></span>
+        </td>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_2}"></span>
+        </td>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONONE_2}"></span><br>
+            <span th:text="${LESSONTWO_2}"></span>
+        </td>
+        <td class="entries">
+            <span th:text="${LECTURER_2}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_2}"></span>
+        </td>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONTHREE_2}"></span><br>
+            <span th:text="${LESSONFOUR_2}"></span>
+        </td>
+        <td class="entries">
+            <span th:text="${LECTURER_2}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_2}"></span>
+        </td>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONFIVE_2}"></span><br>
+            <span th:text="${LESSONSIX_2}"></span>
+        </td>
+        <td class="entries">
+            <span th:text="${LECTURER_2}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_2}"></span>
+        </td>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONSEVEN_2}"></span><br>
+            <span th:text="${LESSONEIGHT_2}"></span>
+        </td>
+        <td class="entries">
+            <span th:text="${LECTURER_2}"></span>
         </td>
     </tr>
     </tbody>
 </table>
-<p style="page-break-before: always">
-    <!-- NEW PAGE HEADER --> </p>
+<!-- PAGEBREAK -->
+<p style="page-break-before: always"> </p>
+<!-- HEADER -->
 <div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
     <table>
         <tbody>
         <tr>
             <td class="header-td">Klassenbuch Woche vom <span class="entries" th:text="${WEEKDAYSTART}"></span>
-                bis <span class="entries" th:text="${WEEKDAYEND}"></span></td>
+                bis <span class="entries" th:text="${WEEKDAYEND}"></span>
+            </td>
             <td class="right"><img class="logo" src="bfz-logo.jpg" alt="logo"></td>
         </tr>
         </tbody>
@@ -295,107 +300,129 @@ hr {
     <table>
         <tbody>
         <tr>
-            <th style="font-size: 11pt;text-align:center;width: 190px;">Tag</th>
-            <th style="font-size: 11pt;text-align:center;padding-left: 2mm;padding-right: 2mm;width: 250px;">Themen-<br>
-                block</th>
-            <th style="font-size: 14pt;text-align:center;padding-left: 4cm;padding-right: 4cm;width: 900px;">Inhalt</th>
-            <th style="font-size: 10pt; text-align:center; font-weight: normal; padding-left: 2mm; padding-right: 2mm;">durch-<br>
+            <th style="font-size: 11pt; text-align:center;width: 75px;">Tag</th>
+            <th style="font-size: 11pt; text-align:center; padding-left: 2mm; padding-right: 2mm;width: 150px;">Themen-<br>
+                block
+            </th>
+            <th style="font-size: 14pt; text-align:center; padding-left: 4cm; padding-right: 4cm;">Inhalt</th>
+            <th style="font-size: 10pt; text-align:center; font-weight: normal; padding-left: 2mm; padding-right: 2mm;width: 100px">durch-<br>
                 geführt<br>
-                von</th>
+                von
+            </th>
         </tr>
         </tbody>
     </table>
 </div>
 <table>
     <tbody>
-    <!-- DAY 1 -->
+    <!-- DAY4 -->
     <tr>
-        <td rowspan="4" style="font-size: 10pt;font-weight: bold;text-align: center;width: 191px;">
-            <span th:text="${WEEKDAY_0}"></span><br>
-            <span th:text="${STARTDATE_0}"></span> </td>
-        <td class="entries" style="
-    width: 254px;"> <span th:text="${SUBJECT_0}"></span><br>
+        <td rowspan="4" style="font-size: 8pt; font-weight: bold; text-align: center;width: 75px;">
+            <span th:text="${WEEKDAY_3}"></span><br>
+            <span th:text="${STARTDATE_3}"></span>
         </td>
-        <td class="entries" style="
-    width: 905px;"> <span th:text="${LESSONONE_0}"></span><br>
-            <span th:text="${LESSONTWO_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_3}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONONE_3}"></span><br>
+            <span th:text="${LESSONTWO_3}"></span>
+        </td>
+        <td class="entries">
+            <span th:text="${LECTURER_3}"></span>
         </td>
     </tr>
     <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_3}"></span>
         </td>
-        <td class="entries"> <span th:text="${LESSONTHREE_0}"></span><br>
-            <span th:text="${LESSONFOUR_0}"></span><br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONTHREE_3}"></span><br>
+            <span th:text="${LESSONFOUR_3}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
-        </td>
-    </tr>
-    <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
-        </td>
-        <td class="entries"> <span th:text="${LESSONFIVE_0}"></span><br>
-            <span th:text="${LESSONSIX_0}"></span><br>
-        </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries">
+            <span th:text="${LECTURER_3}"></span>
         </td>
     </tr>
     <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_3}"></span>
         </td>
-        <td class="entries"> <span th:text="${LESSONSEVEN_0}"></span><br>
-            <span th:text="${LESSONEIGHT_0}"></span><br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONFIVE_3}"></span><br>
+            <span th:text="${LESSONSIX_3}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
-        </td>
-    </tr>
-    <!-- DAY 1 -->
-    <tr>
-        <td rowspan="4" style="font-size: 10pt;font-weight: bold;text-align: center;width: 191px;">
-            <span th:text="${WEEKDAY_0}"></span><br>
-            <span th:text="${STARTDATE_0}"></span> </td>
-        <td class="entries" style="
-    width: 254px;"> <span th:text="${SUBJECT_0}"></span><br>
-        </td>
-        <td class="entries" style="
-    width: 905px;"> <span th:text="${LESSONONE_0}"></span><br>
-            <span th:text="${LESSONTWO_0}"></span><br>
-        </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries">
+            <span th:text="${LECTURER_3}"></span>
         </td>
     </tr>
     <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_3}"></span>
         </td>
-        <td class="entries"> <span th:text="${LESSONTHREE_0}"></span><br>
-            <span th:text="${LESSONFOUR_0}"></span><br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONSEVEN_3}"></span><br>
+            <span th:text="${LESSONEIGHT_3}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries">
+            <span th:text="${LECTURER_3}"></span>
+        </td>
+    </tr>
+    <!-- DAY5 -->
+    <tr>
+        <td rowspan="4" style="font-size: 8pt; font-weight: bold; text-align: center;width: 75px;">
+            <span th:text="${WEEKDAY_4}"></span><br>
+            <span th:text="${STARTDATE_4}"></span>
+        </td>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_4}"></span>
+        </td>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONONE_4}"></span><br>
+            <span th:text="${LESSONTWO_4}"></span>
+        </td>
+        <td class="entries">
+            <span th:text="${LECTURER_4}"></span>
         </td>
     </tr>
     <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_4}"></span>
         </td>
-        <td class="entries"> <span th:text="${LESSONFIVE_0}"></span><br>
-            <span th:text="${LESSONSIX_0}"></span><br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONTHREE_4}"></span><br>
+            <span th:text="${LESSONFOUR_4}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries">
+            <span th:text="${LECTURER_4}"></span>
         </td>
     </tr>
     <tr>
-        <td class="entries"> <span th:text="${SUBJECT_0}"></span><br>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_4}"></span>
         </td>
-        <td class="entries"> <span th:text="${LESSONSEVEN_0}"></span><br>
-            <span th:text="${LESSONEIGHT_0}"></span><br>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONFIVE_4}"></span><br>
+            <span th:text="${LESSONSIX_4}"></span>
         </td>
-        <td class="entries"> <span th:text="${LECTURER_0}"></span> <br>
+        <td class="entries">
+            <span th:text="${LECTURER_4}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td class="entries" style="width: 155px;">
+            <span th:text="${SUBJECT_4}"></span>
+        </td>
+        <td class="entries" style="width: 275px;">
+            <span th:text="${LESSONSEVEN_4}"></span><br>
+            <span th:text="${LESSONEIGHT_4}"></span>
+        </td>
+        <td class="entries">
+            <span th:text="${LECTURER_4}"></span>
         </td>
     </tr>
     </tbody>
 </table>
 <p style="font-size: 12pt; font-weight: bold; margin-top: 7mm;">Bemerkungen:</p>
-<p><br>
-</p>
 </body>
 </html>
