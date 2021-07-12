@@ -1,0 +1,33 @@
+@startuml
+
+title __UTIL's Class Diagram__\n
+
+        class de.thunderfrog.util.ArrayHelper {
+            {static} + sortList()
+        }
+
+  
+
+        class de.thunderfrog.util.CSVImporter {
+            {static} + getListFromCsv()
+        }
+
+  
+
+        class de.thunderfrog.util.DateFormatter {
+            {static} + parseDateTime()
+            {static} + parseDateTime()
+        }
+
+
+  
+
+        class de.thunderfrog.util.PDFCreator {
+            {static} + generate()
+            {static} - html5ParseDocument()
+            {static} - htmlToPdf()
+        }
+
+
+
+@enduml

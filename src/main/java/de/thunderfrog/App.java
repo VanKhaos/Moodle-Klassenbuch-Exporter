@@ -23,7 +23,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         //  Laden und Initialisieren der GUI mittels FXML
-        scene = new Scene(loadFXML("main"), 240, 340);
+        scene = new Scene(loadFXML("main"), 240, 400);
         stage.setScene(scene);
         stage.getIcons().add(new Image(String.valueOf(App.class.getResource("/images/education.png"))));
         stage.setTitle("BFZ - MKE");

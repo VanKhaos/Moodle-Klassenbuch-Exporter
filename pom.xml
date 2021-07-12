@@ -35,7 +35,7 @@
             <version>1.8</version>
         </dependency>
 
-        <!-- THYMLEAF -->
+        <!-- THYMELEAF -->
         <dependency>
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf</artifactId>

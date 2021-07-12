@@ -1,0 +1,77 @@
+@startuml
+
+title __Digitales Klassenbuch Umwandeler__\n
+
+        class de.thunderfrog.controller.Controller {
+            + datePickFrom : DatePicker
+            + txtFileLoad : Label
+            + txtSavePDF : Label
+            - list : List<MoodleData>
+            + openFile()
+            + savePDF()
+        }
+
+        class de.thunderfrog.util.ArrayHelper {
+            {static} + sortList()
+        }
+
+        class de.thunderfrog.util.CSVImporter {
+            {static} + getListFromCsv()
+        }
+
+        class de.thunderfrog.util.DateFormatter {
+            {static} + parseDateTime()
+            {static} + parseDateTime()
+        }
+
+        class de.thunderfrog.util.PDFCreator {
+            {static} + generate()
+            {static} - html5ParseDocument()
+            {static} - htmlToPdf()
+        }
+
+
+        class de.thunderfrog.MoodleData {
+                  - dateTime : String
+                  - lecturer : String
+                  - lessonEight : String
+                  - lessonFive : String
+                  - lessonFour : String
+                  - lessonOne : String
+                  - lessonSeven : String
+                  - lessonSix : String
+                  - lessonThree : String
+                  - lessonTwo : String
+                  - subject : String
+                  - weekday : String
+                  + getDateTime()
+                  + getLecturer()
+                  + getLessonEight()
+                  + getLessonFive()
+                  + getLessonFour()
+                  + getLessonOne()
+                  + getLessonSeven()
+                  + getLessonSix()
+                  + getLessonThree()
+                  + getLessonTwo()
+                  + getSubject()
+                  + getWeekday()
+                  + setDateTime()
+                  + setLecturer()
+                  + setLessonEight()
+                  + setLessonFive()
+                  + setLessonFour()
+                  + setLessonOne()
+                  + setLessonSeven()
+                  + setLessonSix()
+                  + setLessonThree()
+                  + setLessonTwo()
+                  + setSubject()
+                  + setWeekday()
+              }
+
+              de.thunderfrog.App -up-|> javafx.application.Application
+
+
+
+@enduml

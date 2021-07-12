@@ -6,6 +6,7 @@ module de.thunderfrog {
     requires java.xml;
     requires openhtmltopdf.pdfbox;
     requires org.jsoup;
+    requires java.desktop;
 
 
     opens de.thunderfrog to javafx.fxml;

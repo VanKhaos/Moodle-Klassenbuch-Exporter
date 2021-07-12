@@ -2,10 +2,10 @@ package de.thunderfrog.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.List;
 import de.thunderfrog.MoodleData;
 import de.thunderfrog.util.ArrayHelper;
@@ -16,8 +16,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+
+import static java.awt.Desktop.getDesktop;
+
 
 public class Controller {
 
@@ -25,6 +29,7 @@ public class Controller {
     public Label txtFileLoad;
     public Label txtSavePDF;
     public DatePicker datePickFrom;
+    public TextField txtKursName;
 
     private List<MoodleData> list;
 
@@ -85,7 +90,7 @@ public class Controller {
         try {
             //  Funktionsaufruf um die PDF zu erstellen
 
-            PDFCreator.generate(list, DateFormatter.parseDateTime(datePickFrom.getValue()));
+            PDFCreator.generate(list, DateFormatter.parseDateTime(datePickFrom.getValue()), txtKursName.getText());
 
             //  Status Text auf der GUI updaten
             txtSavePDF.setTextFill(Color.GREEN);
@@ -99,5 +104,9 @@ public class Controller {
         }
 
 
+    }
+
+    public void goGit(ActionEvent actionEvent) throws IOException, URISyntaxException {
+        getDesktop().browse(new URL("https://github.com/VanKhaos").toURI());
     }
 }

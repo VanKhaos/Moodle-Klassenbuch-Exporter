@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.List;
 import de.thunderfrog.MoodleData;
+import javafx.scene.control.TextField;
 import org.jsoup.Jsoup;
 import org.jsoup.helper.W3CDom;
 import org.thymeleaf.TemplateEngine;
@@ -18,16 +19,16 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.w3c.dom.Document;
 import com.openhtmltopdf.pdfboxout.PdfRendererBuilder;
 
-
 public class PDFCreator {
 
     /**
      * PDF aus HTML generieren mit dem Inhalt einer Liste von MoodleData
      * @param list
      * @param date
+     * @param txtKursName
      * @throws IOException
      */
-    public static void generate(List<MoodleData> list, String date) throws IOException, ParseException {
+    public static void generate(List<MoodleData> list, String date, String txtKursName) throws IOException, ParseException {
         //  Template System von Thymeleaf initialisieren
         ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
         templateResolver.setSuffix(".html");
@@ -92,7 +93,7 @@ public class PDFCreator {
 
             //  Name der Temp & Output Datei
             String inputHTML = "temp.html";
-            String outputPdf = "Moodle Klassenbuch Export " + formattedDate + ".pdf";
+            String outputPdf = txtKursName + " - Moodle Klassenbuch Export " + formattedDate + ".pdf";
 
             //  HTML Template zu PDF erstellen
             htmlToPdf(inputHTML, outputPdf);
